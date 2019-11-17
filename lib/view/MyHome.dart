@@ -9,157 +9,97 @@ class _MyHomeState extends State<MyHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2b2e36),
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 6,
+        leading: Icon(
+          Icons.arrow_back_ios,
+          color: Colors.black,
+        ),
+        title: Text(
+          "كود التفعيل",
+          style: TextStyle(color: Colors.black),
+        ),
+        centerTitle: true,
+      ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
             SizedBox(
-              height: 10,
+              height: 30,
             ),
             Padding(
-              padding: EdgeInsets.only(top: 8),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  RawMaterialButton(
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.arrow_back,
-                      color: Colors.white,
-                      size: 22,
-                    ),
-                    shape: CircleBorder(),
-                    elevation: 2.0,
-                    fillColor: Color(0xff3f4249),
-                    padding: EdgeInsets.all(12),
-                  ),
-                  Text(
-                    "Secrets",
-                    style: TextStyle(fontSize: 22, color: Color(0xff808286)),
-                  ),
-                  RawMaterialButton(
-                    onPressed: () {},
-                    child: Icon(
-                      Icons.add,
-                      color: Colors.white,
-                      size: 22,
-                    ),
-                    shape: CircleBorder(),
-                    elevation: 2.0,
-                    fillColor: Color(0xff6fb742),
-                    padding: EdgeInsets.all(12),
-                  ),
-                ],
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
+              child: Text(
+                "لقد ارسلنا لك كود التفعيل على الرقم 09339388848 ، ادخله اسفله ليتم التفعيل بنجاح",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
-            Card(
-              color: Color(0xFF6bb23e),
-              semanticContainer: true,
-              elevation: 10,
-              clipBehavior: Clip.antiAliasWithSaveLayer,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Container(
-                height: 400,
-                width: MediaQuery.of(context).size.width / 1.2,
-                padding: EdgeInsets.all(36),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    Text(
-                      "Anna",
-                      style: TextStyle(
-                          fontSize: 32,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                      height: 1,
-                      width: 250,
-                      padding: EdgeInsets.only(left: 560),
+            Container(
+                padding:
+                    EdgeInsets.only(left: 20.0, right: 20, top: 10, bottom: 10),
+                // color: Colors.,
+                decoration: BoxDecoration(
+                    // color: Colors.grey,
+                    borderRadius: BorderRadius.circular(10)),
+                child: TextField(
+                  keyboardType: TextInputType.text,
+                  onChanged: (text) {
+                    setState(() {
+                      // participantNames = text.toLowerCase();
+                    });
+                  },
+                )),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 18.0, right: 18),
+              child: MaterialButton(
+                // elevation: 0,
+                minWidth: double.infinity,
+                padding: EdgeInsets.all(20),
+                color: Color(0xFF2196f3),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30)),
+                child: Text(
+                  'تأكيد التفعيل',
+                  style: TextStyle(
                       color: Colors.white,
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Padding(
-                      padding: EdgeInsets.only(top: 28),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: EdgeInsets.only(top: 32),
-                            child: Text(
-                              "Of the people in this room who is the most amazing one ?",
-                              style: TextStyle(
-                                  fontSize: 28,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.normal),
-                              textAlign: TextAlign.center,
-                            ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold),
                 ),
+                onPressed: () {},
               ),
             ),
-            Expanded(
-              child: Container(
-                padding: EdgeInsets.only(bottom: 38),
-                alignment: Alignment.bottomCenter,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Container(
-                      width: 150,
-                      child: RawMaterialButton(
-                        onPressed: () {},
-                        child: Text(
-                          "complete",
-                          style:
-                              TextStyle(fontSize: 22, color: Color(0xff6fb742)),
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        elevation: 2.0,
-                        fillColor: Color(0xff3f4249),
-                        padding: EdgeInsets.all(12),
-                      ),
-                    ),
-                    Container(
-                      width: 150,
-                      child: RawMaterialButton(
-                        onPressed: () {},
-                        child: Text(
-                          "forfeit",
-                          style:
-                              TextStyle(fontSize: 22, color: Color(0xffff135c)),
-                        ),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5),
-                        ),
-                        elevation: 2.0,
-                        fillColor: Color(0xff3f4249),
-                        padding: EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            )
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'لم تستلم كود التفعيل؟',
+              style: TextStyle(
+                  // color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              'اعادة ارسال الكود في' + " 00:44",
+              style: TextStyle(
+                  color: Colors.blue[800],
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold),
+            ),
           ],
         ),
       ),
